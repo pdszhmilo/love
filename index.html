@@ -44,6 +44,9 @@
 
     <script>
     (function(){
+       
+        var htmlobj=$.ajax({url:"https://chp.shadiao.app/api.php",async:false});
+        console.log(htmlobj);
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
