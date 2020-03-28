@@ -44,9 +44,20 @@
 
     <script>
     (function(){
-       
-        var htmlobj=$.ajax({url:"https://chp.shadiao.app/api.php",async:false});
-        console.log(htmlobj);
+       var url = 'https://chp.shadiao.app/api.php';
+$.ajax(url, {
+data: {
+'domain': 'wangyage.cn',
+'date': 'GetCaiHongPi'
+},
+dataType: 'jsonp',
+crossDomain: true,
+success: function(data) {
+if(data && data.resultcode == '200'){
+console.log(data.result.today);
+}
+}
+});
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
