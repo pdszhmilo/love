@@ -27,6 +27,7 @@
  <span class="say">虽然没有经常出现在我的生活里</span><br /><br />
  <span class="say">但是我爱了她好多年</span><br /><br />
                    <br>
+             <span class="say talk"></span><br /><br />    
                     <span class="say"><span class="space"></span> -- For 亲爱的王姑娘.</span>
                     </div>
                 </div>
@@ -41,18 +42,15 @@
 
     <script>
     (function(){
-       var url = 'https://chp.shadiao.app/api.php';
-$.ajax(url, {
-data: {
-'domain': 'wangyage.cn',
-'date': 'GetCaiHongPi'
-},
-dataType: 'jsonp',
-crossDomain: true,
-success: function(data) {
-console.log(data);
-}
-});
+        $.ajax('https://v1.hitokoto.cn/?c=j', {
+        data: {},
+        dataType: 'json',
+        crossDomain: true,
+        type:"get",
+        success: function(data) {
+         $(".talk").append(data.hitokoto);
+        },
+      },'text');
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
