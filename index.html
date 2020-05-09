@@ -43,15 +43,15 @@
 
     <script>
     (function(){
-        $.ajax('https://v1.hitokoto.cn/?c=j', {
-        data: {},
-        dataType: 'json',
-        crossDomain: true,
-        type:"get",
-        success: function(data) {
-         $(".talk").append(data.hitokoto);
-        },
-      },'text');
+    //     $.ajax('https://v1.hitokoto.cn/?c=j', {
+    //     data: {},
+    //     dataType: 'json',
+    //     crossDomain: true,
+    //     type:"get",
+    //     success: function(data) {
+    //      $(".talk").append(data.hitokoto);
+    //     },
+    //   },'text');
         var canvas = $('#canvas');
 
         if (!canvas[0].getContext) {
